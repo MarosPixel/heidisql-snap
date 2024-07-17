@@ -1,15 +1,15 @@
-name: heidisql-wine
+name: heidisql-marospixel
 title: heidisql (Wine)
 summary: HeidiSQL is a free and powerful database client.
 description: HeidiSQL is free software, and has the aim to be easy to learn. "Heidi" lets you see and edit data and structures from computers running one of the database systems MariaDB, MySQL, Microsoft SQL, PostgreSQL and SQLite. Invented in 2002 by Ansgar, HeidiSQL belongs to the most popular tools for MariaDB and MySQL worldwide.
-adopt-info: heidisql-wine
+adopt-info: heidisql-marospixel
 
 confinement: strict
 grade: stable
+base: core18
 architectures:
   - build-on: amd64
     run-on: [amd64, i386]
-base: core18
 compression: lzo
 
 plugs:
@@ -27,16 +27,16 @@ environment:
   WINEARCH: "win32"
 
 apps:
-  heidisql-wine:
+  heidisql-marospixel:
     extensions: [ gnome-3-28 ]
     command: bin/sommelier run-exe
     environment:
-      RUN_EXE: "$SNAP_USER_DATA/heidisql-wine/heidisql.exe"
+      RUN_EXE: "$SNAP_USER_DATA/heidisql-marospixel/heidisql.exe"
       SOMMELIER_KEEP_CWD: 1  # Don't change the working directory so relative paths still work
     plugs:
       - home
       - network
-    desktop: usr/share/applications/heidisql-wine.desktop
+    desktop: usr/share/applications/heidisql-marospixel.desktop
   # The wine command can be used to run applications inside the wine
   # environment that this snap uses.
   #
@@ -50,7 +50,7 @@ apps:
       - network
 
 parts:
-  heidisql-wine:
+  heidisql-marospixel:
     plugin: nil
     source: ./snap/local/src
     override-build: |
